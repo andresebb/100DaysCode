@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frases random</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      background: rgb(16, 16, 58);
+    }
+
+    .container {
+      width: 350px;
+      height: 300px;
+      border: 1px solid black;
+      background: #14c68a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+    }
+    .box {
+      text-align: center;
+      padding: 15px;
+    }
+    button {
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      background: #ff4f0e;
+      color: white;
+      font-family: ink free;
+      font-size: 18px;
+      outline: none;
+    }
+
+    p {
+      color: white;
+      font-size: 20px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="box">
+        <button>Generate quote</button>
+        <p id="texto">Este el el teto jeje</p>
+      </div>
+    </div>
+    <script>
+      const boton = document.querySelector("button");
+      const texto = document.getElementById("texto");
+
+      const frase1 = "La vida es una sola y hay que disfrutarla";
+      const frase2 = "La inspiracion surge a partir de los mas bonitos actos";
+      const frase3 = "Cuando estes en odio necesidad y odio quedan unidos";
+      const frase4 = "Pues esto es un lorem5 insuot eie weiwhe ";
+
+      const frases = [frase1, frase2, frase3, frase4];
+
+      boton.addEventListener("click", generateQuotes);
+
+      function generateQuotes() {
+        const index = Math.floor(Math.random() * frases.length);
+        const posicion = frases[index];
+        texto.innerHTML = posicion;
+      }
+    </script>
+  </body>
+</html>

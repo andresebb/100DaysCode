@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change color</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="container" id="container">
+      <button id="boton">Click on me</button>
+    </div>
+    <script>
+      const boton = document.getElementById("boton");
+      const colores = [
+        "green",
+        "blue",
+        "yellow",
+        "red",
+        "seagreen",
+        "pink",
+        "tail",
+      ];
+      const contenedor = document.getElementById("container");
+
+      boton.addEventListener("click", changeColor);
+
+      function changeColor() {
+        const color = parseInt(Math.random() * colores.length);
+        contenedor.style.background = colores[color];
+
+        //Asi funciona math random
+        const luis = parseInt(Math.random() * (0, 10));
+        console.log(luis);
+      }
+    </script>
+  </body>
+</html>

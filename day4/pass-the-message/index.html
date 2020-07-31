@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pass the message</title>
+</head>
+<style>
+  body{
+    display: flex;
+    align-items: center;
+    background-color: rgb(15, 236, 163);
+    justify-content: center;
+    height: 100vh;
+    color: aqua;
+    font-family: arial;
+  }
+
+  .container{
+    text-align: center;
+    background: rgb(9, 30, 75);
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  form{
+    display: grid;
+  }
+
+  #text{
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    font-size: 18px;
+    margin: 10px;
+    outline: none;
+  }
+  #boton{
+    width: 80px;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: none;
+    height: 35px;
+    background: cadetblue;
+    cursor: pointer;
+    outline: none;
+  }
+
+
+  .alert{
+    display: none;
+    background: red;
+  }
+
+
+  .yellow{ 
+    display: block;
+  }
+
+
+
+</style>
+<body>
+  <div class="container">
+    <h2>A messege you would like to pass</h2>
+    <form id="message-form">
+      <input type="text" placeholder="Escribe tu mensaje" id="text">
+      <input type="submit" value="envialo" id="boton">
+    </form>
+    <h2 class="alert">Esta es una alerta</h2>
+    <h3 id="message">Aqui va tu mensaje</h3>
+    </form>
+  </div>
+  <script>
+
+    const text = document.getElementById("text");
+    const btn = document.getElementById("boton");
+    const message = document.getElementById("message");
+    const form = document.getElementById("message-form");
+    const alert = document.querySelector(".alert")
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      if(text.value === ""){
+        alert.classList.add("yellow");
+        setTimeout(() => {
+          alert.classList.remove("yellow")
+        }, 2000)
+      }else{
+        message.innerHTML = text.value
+        text.value = ""
+      }
+    });
+
+  </script>
+</body>
+</html>
