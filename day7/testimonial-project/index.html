@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testimonials project</title>
+  </head>
+  <style>
+    body {
+      background-color: rgb(24, 24, 58);
+      height: 100vh;
+      color: white;
+      text-align: center;
+    }
+
+    .box-father {
+      display: flex;
+      margin: 0 auto;
+      align-items: center;
+      width: 500px;
+    }
+
+    .box {
+      border: 1px solid red;
+      background: rgb(14, 180, 139);
+      padding: 18px;
+      width: 500px;
+    }
+
+    .custom {
+      animation-name: cool;
+      animation-duration: 1s;
+    }
+
+    .custom1 {
+      animation: cool 1s;
+    }
+
+    @keyframes cool {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.5;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    img {
+      border-radius: 40px;
+    }
+    .btn {
+      height: 50px;
+    }
+  </style>
+  <body>
+    <h2>Client</h2>
+    <h1>TESTIMONIAL</h1>
+    <div class="box-father">
+      <button id="before" class="btn"><</button>
+      <div class="box" id="cajita">
+        <div class="person">
+          <img
+            class="imagen"
+            width="100px"
+            height="100px"
+            id="avatar"
+            src="images/imagen2.png"
+            alt=""
+          />
+          <h2 id="avatarName">SANDY</h2>
+        </div>
+        <div>
+          <p id="testimonial">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Cupiditate, voluptas! Autem beatae ab sit ipsa, velit eum vel eos
+            maiores ipsam commodi illo blanditiis praesentium at nesciunt earum?
+            Perferendis, quo!
+          </p>
+        </div>
+      </div>
+      <button id="after" class="btn">></button>
+    </div>
+    <script>
+      const imagen = document.getElementById("avatar");
+      const nombre = document.getElementById("avatarName");
+      const testimonio = document.getElementById("testimonial");
+      const btnBefore = document.getElementById("before");
+      const btnAfter = document.getElementById("after");
+      const cajita = document.getElementById("cajita");
+      let counter = 0;
+
+      const personas = [
+        {
+          avatarImage: "./images/imagen1.png",
+          avatarName: "andres",
+          avatarTestimonial: "lorem insut de tal",
+        },
+        {
+          avatarImage: "./images/imagen2.png",
+          avatarName: "juan",
+          avatarTestimonial: "Hola soy juan y pienso que tal",
+        },
+        {
+          avatarImage: "./images/imagen3.png",
+          avatarName: "pedro",
+          avatarTestimonial: "yo soy pedro y pienso esto",
+        },
+      ];
+
+      btnAfter.addEventListener("click", () => {
+        if (counter >= 0) {
+          counter++;
+          if (counter >= personas.length) {
+            counter = 0;
+          }
+        }
+
+        cajita.classList.add("custom");
+
+        if (cajita.classList.contains("custom")) {
+          cajita.classList.add("customsito");
+        }
+        console.log(counter);
+        const nombresito = personas[counter].avatarName;
+        const testimonsito = personas[counter].avatarTestimonial;
+        const imagensita = personas[counter].avatarImage;
+
+        testimonio.textContent = testimonsito;
+        nombre.textContent = nombresito;
+        imagen.setAttribute("src", imagensita);
+      });
+
+      btnBefore.addEventListener("click", () => {
+        if (counter >= 0) {
+          counter--;
+          if (counter < 0) {
+            counter = personas.length - 1;
+          }
+        }
+
+        console.log(counter);
+        const nombresito = personas[counter].avatarName;
+        const testimonsito = personas[counter].avatarTestimonial;
+        const imagensita = personas[counter].avatarImage;
+
+        testimonio.textContent = testimonsito;
+        nombre.textContent = nombresito;
+        imagen.setAttribute("src", imagensita);
+      });
+    </script>
+  </body>
+</html>
