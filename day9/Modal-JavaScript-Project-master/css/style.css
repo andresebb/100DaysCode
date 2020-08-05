@@ -1,0 +1,259 @@
+body {
+  font-size: 15px;
+  margin: 0 auto;
+  font-family: "Spartan", sans-serif;
+  background-color: #effafa;
+}
+
+.header {
+  height: 120px;
+  background-color: #5ba4a4;
+}
+.header__imagen {
+  height: 120px;
+  background-image: url("../assets/images/bg-header-desktop.svg");
+  background-size: cover;
+}
+
+/*/////////////////////////// End header */
+
+/*/////////////////////////// start jobs box */
+
+.jobs {
+  background-color: #effafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.jobs__container {
+  width: 33%;
+  margin: 26px 26px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  border-left: 4px solid #5ba4a4;
+  box-shadow: 12px 12px 22px -17px #2c3a3a;
+  transition: 1s;
+}
+
+.jobs__left {
+  align-items: center;
+  padding: 10px;
+  justify-content: center;
+}
+.jobs__left .jobs__image img {
+  width: 100%;
+  height: 150px;
+  transition: 1s;
+}
+
+.jobs__left .jobs__image img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.jobs__description__top {
+  display: flex;
+  margin-top: 22px;
+  align-items: center;
+}
+.jobs__description__top p {
+  margin: 0;
+  color: #5ba4a4;
+  margin-right: 10px;
+  font-weight: 700;
+  font-size: 14px;
+}
+.jobs__description__top a {
+  text-transform: uppercase;
+  color: white;
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 10px;
+}
+.jobs__description__top .jobs__description__top--blue {
+  background: #5ba4a4;
+}
+.jobs__description__top .jobs__description__top--black {
+  background: #2c3a3a;
+}
+.jobs__description__middle h3 {
+  margin: 16px 0;
+  font-weight: 700;
+  color: #2c3a3a;
+}
+.jobs__description__botton li {
+  margin: 0;
+  display: flex;
+  padding: 0;
+}
+.jobs__description__botton li p {
+  margin: 0;
+  display: list-item;
+  margin-right: 26px;
+  color: #7b8e8e;
+}
+.jobs__description__botton li p:first-child {
+  display: block;
+}
+
+.jobs__right {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+}
+.jobs__right li {
+  list-style: none;
+  display: flex;
+}
+.jobs__right li p {
+  margin: 0;
+  color: #5ba4a4;
+  background-color: #effafa;
+  border-radius: 8px;
+  margin-right: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 5px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+.jobs__right li p:hover {
+  background-color: #ccd7d7;
+}
+.jobs .rojo {
+  background-color: red;
+}
+
+.jobs__filter {
+  text-align: center;
+  padding: 24px;
+}
+
+.jobs__filter a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #63baba;
+  margin: 8px;
+}
+
+.jobs__filter a:hover {
+  background-color: #5ba4a4;
+}
+
+.jobs__filter a:checked {
+  background: red;
+}
+
+.jobs__filter div div {
+  height: 68px;
+  line-height: 62px;
+}
+
+input {
+  padding: 12px;
+  width: 300px;
+  border: none;
+  border-radius: 14px;
+  outline: none;
+}
+
+.rojo {
+  background-color: rgb(20, 48, 90) !important;
+}
+
+img {
+  border-radius: 14px;
+}
+
+/*///////////////////////// MODAL */
+
+.modal {
+  z-index: 999;
+  background: #85838342;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: none;
+  transition: 1.5s;
+}
+
+.modal__container {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.modal__box {
+  width: 70%;
+  height: 450px;
+  margin: 0 auto;
+  text-align: right;
+  padding: 24px;
+  position: relative;
+}
+
+@keyframes modalIn {
+  0% {
+    transform: translateY(-2000px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalOut {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-2000px);
+  }
+}
+
+.img-modal {
+  width: 100%;
+  height: 100%;
+}
+
+.lightbox-close {
+  font-size: 42px;
+  color: rgb(16, 211, 211);
+  text-align: right;
+  cursor: pointer;
+}
+
+.lightbox-item {
+  height: 400px;
+}
+
+.btnLeft {
+  font-size: 64px;
+  position: absolute;
+  top: 46%;
+  left: -16px;
+  color: rgb(16, 211, 211);
+
+  cursor: pointer;
+}
+
+.btnRight {
+  font-size: 64px;
+  position: absolute;
+  color: rgb(16, 211, 211);
+  top: 46%;
+  right: -16px;
+  cursor: pointer;
+}
+
+.img-modal {
+  background: url("../img/cake-1.jpeg");
+}
