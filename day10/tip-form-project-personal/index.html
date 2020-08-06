@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="cotainer">
+      <div class="container__box">
+        <div class="box">
+          <div class="box-title">
+            <h2>TIP CALCULATOR</h2>
+          </div>
+          <form action="" class="form-father">
+            <div class="howMuch">
+              <h3>How much was your bill?</h3>
+              <div>
+                <input
+                  id="howMuchNumber"
+                  type="number"
+                  placeholder="your bill"
+                />
+              </div>
+            </div>
+            <div class="howMany">
+              <h3>How many people sharing the bill?</h3>
+              <div>
+                <input id="howManyNumber" type="number" placeholder="people" />
+              </div>
+            </div>
+            <div class="tip">
+              <h3>How was your service</h3>
+              <div>
+                <select name="" id="select">
+                  <option selected value="0">Choose...</option>
+                  <option value="1" id="great">Great - 20%</option>
+                  <option value="2" id="goodd">Good - 10%</option>
+                  <option value="3" id="bad">Bad - 2%</option>
+                </select>
+              </div>
+            </div>
+            <div class="boton">
+              <input type="submit" class="btn" value="Calcular" id="calcular" />
+            </div>
+            <div class="img-container">
+              <img src="./img/Facebook-1s-200px.gif" alt="" />
+            </div>
+            <div class="tip-result">
+              <h3>Tip Amount $ <span id="tip-amount">10</span></h3>
+              <h3>Total Amount $ <span id="total-amount">20</span></h3>
+              <h3>
+                Each person owes $ <span id="each-person-amount">10</span>
+              </h3>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
