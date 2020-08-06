@@ -17,6 +17,10 @@ input {
   outline: red;
 }
 
+.container {
+  width: 70%;
+}
+
 .container__box {
   background: white;
   border-radius: 24px;
@@ -60,7 +64,7 @@ input {
 .btn {
   width: 80%;
   margin: 0px auto;
-  background: red;
+  background: rgb(26, 165, 96);
   border: none;
   border-radius: 16px;
   font-size: 18px;

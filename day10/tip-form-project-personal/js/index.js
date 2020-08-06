@@ -16,11 +16,26 @@ const tipAmountText = document.getElementById("tip-amount");
 const totalAmountText = document.getElementById("total-amount");
 const personAmountText = document.getElementById("each-person-amount");
 
+function getTip(howMuchNumber, howManyNumber, selectNumber) {
+  const tipAmount = (howMuchNumber * selectNumber) / 100;
+  const totalAmound = howMuchNumber + tipAmount;
+  const eachPerson = totalAmound / howManyNumber;
+
+  console.log(`Propina ${tipAmount}`);
+  console.log(`Cantidad total ${totalAmound}`);
+  console.log(`Cada persona ${eachPerson}`);
+
+  tipResult.style.display = "block";
+  tipAmountText.textContent = tipAmount;
+  totalAmountText.textContent = totalAmound;
+  personAmountText.textContent = eachPerson;
+}
+
 const worker = (e) => {
   e.preventDefault();
 
   imagen.style.display = "block";
-
+  tipResult.style.display = "none";
   setTimeout(() => {
     imagen.style.display = "none";
   }, 2000);
@@ -40,19 +55,9 @@ const worker = (e) => {
   const howMuchNumber = parseInt(howMuch.value);
   const howManyNumber = parseInt(howMany.value);
 
-  function getTip(howMuchNumber, howManyNumber, selectNumber) {
-    const tipAmount = (howMuchNumber * selectNumber) / 100;
-    const totalAmound = howMuchNumber + tipAmount;
-    const eachPerson = totalAmound / howManyNumber;
-
-    console.log(`Propina ${tipAmount}`);
-    console.log(`Cantidad total ${totalAmound}`);
-    console.log(`Cada persona ${eachPerson}`);
-
-    tipResult.style.display = "block";
-    tipAmountText.textContent = tipAmount;
-  }
-  getTip(howMuchNumber, howManyNumber, selectNumber);
+  setTimeout(() => {
+    getTip(howMuchNumber, howManyNumber, selectNumber);
+  }, 2000);
 };
 
 btnCalcular.addEventListener("click", worker);
