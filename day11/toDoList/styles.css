@@ -1,0 +1,80 @@
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background: rgb(241, 235, 235);
+  font-family: "ink free";
+  font-size: 22px;
+}
+
+input {
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid green;
+  outline: none;
+  width: 300px;
+}
+
+.btn {
+  padding: 12px;
+  border-radius: 14px;
+  outline: none;
+  border: 1px solid green;
+  color: green;
+}
+
+.btn:hover {
+  background: green;
+  color: black;
+}
+
+.todo__list {
+  text-align: center;
+}
+
+.add-item-btn {
+  margin-left: -28px;
+}
+
+.list__add-container div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tachado {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.tachar {
+  color: green;
+}
+
+.editar {
+  color: aqua;
+}
+
+.eliminar {
+  color: red;
+  font-size: 16px;
+}
+
+a {
+  margin: 6px;
+  text-decoration: none;
+}
+
+.alerta {
+  display: none;
+}
+
+.success {
+  background: rgb(12, 173, 160);
+  display: none;
+}
+
+.success h2 {
+  font-size: 14px;
+  color: green;
+}
